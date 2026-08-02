@@ -9,6 +9,9 @@ import { GithubIcon } from "@/components/icons"
 import { featuredProjects, otherProjects } from "@/data/projects"
 import { containerVariants, itemVariants } from "@/lib/animations"
 import { cn } from "@/lib/utils"
+import { SpotHoleMockup } from "@/components/mockups/SpotHoleMockup"
+import { WomensHealthMockup } from "@/components/mockups/WomensHealthMockup"
+import { TurfArenaMockup } from "@/components/mockups/TurfArenaMockup"
 
 export function Projects() {
   return (
@@ -36,19 +39,32 @@ export function Projects() {
                   "grid grid-cols-1 lg:grid-cols-12 gap-0",
                   isReversed ? "lg:flex-row-reverse" : ""
                 )}>
-                  {/* Image Placeholder */}
+                  {/* Project Visual */}
                   <div className={cn(
-                    "lg:col-span-6 relative bg-secondary/30 min-h-[300px] lg:min-h-full flex flex-col items-center justify-center overflow-hidden border-b lg:border-b-0 border-white/5",
-                    isReversed ? "lg:order-2 lg:border-l" : "lg:order-1 lg:border-r"
+                    "lg:col-span-6 relative flex flex-col items-center justify-center p-2 sm:p-6 lg:p-10",
+                    isReversed ? "lg:order-2" : "lg:order-1"
                   )}>
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
+                    {/* Glowing ambient background blob */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-md max-h-md bg-primary/20 blur-[120px] rounded-full pointer-events-none opacity-50 group-hover:opacity-100 transition-opacity duration-700" />
+                    
+                    {/* Floating Mockup Container with 3D tilt effect */}
                     <motion.div 
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.4 }}
-                      className="flex flex-col items-center text-muted-foreground/30"
+                      whileHover={{ scale: 1.05, y: -5 }}
+                      transition={{ duration: 0.5, ease: "easeOut" }}
+                      className="w-full relative z-10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-xl border border-white/10 overflow-hidden ring-1 ring-white/5"
                     >
-                      <ImageIcon className="w-16 h-16 mb-4" />
-                      <span className="font-medium text-sm">Project Visual Placeholder</span>
+                      {/* Browser-like subtle top bar for extra realism */}
+                      <div className="w-full h-6 bg-black/40 backdrop-blur-md border-b border-white/5 flex items-center px-3 gap-1.5 absolute top-0 left-0 z-50">
+                        <div className="w-2 h-2 rounded-full bg-red-500/80" />
+                        <div className="w-2 h-2 rounded-full bg-yellow-500/80" />
+                        <div className="w-2 h-2 rounded-full bg-green-500/80" />
+                      </div>
+                      
+                      <div className="pt-6 w-full h-full bg-zinc-950">
+                        {project.title === "SpotHole AI" && <SpotHoleMockup />}
+                        {project.title === "Women's Health Analytics" && <WomensHealthMockup />}
+                        {project.title === "TurfArena" && <TurfArenaMockup />}
+                      </div>
                     </motion.div>
                   </div>
                   

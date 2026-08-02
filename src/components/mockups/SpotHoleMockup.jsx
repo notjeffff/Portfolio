@@ -3,7 +3,7 @@ import { Activity, Map, LayoutDashboard, Target, Video, AlertTriangle } from "lu
 
 export function SpotHoleMockup() {
   return (
-    <div className="w-full aspect-video bg-zinc-950 flex overflow-hidden rounded-xl border border-white/10 select-none group/mockup relative shadow-2xl">
+    <div className="w-full aspect-video bg-zinc-950 flex overflow-hidden select-none group/mockup relative">
       {/* Sidebar */}
       <div className="w-12 md:w-16 h-full bg-zinc-900 border-r border-white/5 flex flex-col items-center py-4 gap-6 shrink-0 z-10">
         <div className="w-8 h-8 rounded bg-primary/20 flex items-center justify-center mb-4">

@@ -9,7 +9,7 @@ export const featuredProjects = [
       "Scalable architecture"
     ],
     techStack: ["Python", "YOLOv8", "OpenCV", "FastAPI", "SQLite", "JavaScript"],
-    githubUrl: "#",
+    githubUrl: "https://github.com/notjeffff/SpotHole-AI",
     liveUrl: null, // Hidden gracefully
     learnMoreUrl: "#"
   },
@@ -24,7 +24,7 @@ export const featuredProjects = [
       "Interactive dashboards"
     ],
     techStack: ["Python", "Pandas", "NumPy", "Scikit-learn", "XGBoost", "Tableau"],
-    githubUrl: "#",
+    githubUrl: "https://github.com/notjeffff/Women-Health-Prediction",
     liveUrl: "#",
     learnMoreUrl: "#"
   },
@@ -38,7 +38,7 @@ export const featuredProjects = [
       "Database Integration"
     ],
     techStack: ["Node.js", "Express.js", "MySQL", "JavaScript", "HTML", "CSS"],
-    githubUrl: "#",
+    githubUrl: "https://github.com/notjeffff/TurfArena",
     liveUrl: "#",
     learnMoreUrl: "#"
   }

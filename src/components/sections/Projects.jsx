@@ -99,19 +99,11 @@ export function Projects() {
                     </div>
                     
                     <div className="flex flex-wrap items-center gap-4 mt-auto">
-                      {project.githubUrl && (
-                        <Button variant="outline" className="bg-transparent border-white/10 hover:bg-white/5 rounded-full px-6 h-12">
-                          <GithubIcon className="mr-2 w-4 h-4" /> Code
-                        </Button>
-                      )}
-                      {project.liveUrl && (
-                        <Button variant="outline" className="bg-transparent border-white/10 hover:bg-white/5 rounded-full px-6 h-12">
-                          <ExternalLink className="mr-2 w-4 h-4" /> Live Demo
-                        </Button>
-                      )}
-                      {project.learnMoreUrl && (
-                        <Button variant="default" className="rounded-full px-6 h-12 group/btn">
-                          Learn More <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
+                      {project.githubUrl && project.githubUrl.trim() !== "" && (
+                        <Button variant="outline" className="bg-transparent border-white/10 hover:bg-white/5 rounded-full px-6 h-12 group/btn" asChild>
+                          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                            <GithubIcon className="mr-2 w-4 h-4 group-hover/btn:text-primary transition-colors" /> GitHub
+                          </a>
                         </Button>
                       )}
                     </div>
@@ -145,13 +137,13 @@ export function Projects() {
                     <ImageIcon className="w-5 h-5 text-primary" />
                   </div>
                   <div className="flex items-center gap-3">
-                    {project.githubUrl && (
-                      <a href={project.githubUrl} className="text-muted-foreground hover:text-primary transition-colors" aria-label={`View ${project.title} on GitHub`}>
+                    {project.githubUrl && project.githubUrl.trim() !== "" && (
+                      <a href={project.githubUrl} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label={`View ${project.title} on GitHub`}>
                         <GithubIcon className="w-5 h-5" />
                       </a>
                     )}
-                    {project.liveUrl && (
-                      <a href={project.liveUrl} className="text-muted-foreground hover:text-primary transition-colors" aria-label={`View live demo of ${project.title}`}>
+                    {project.liveUrl && project.liveUrl.trim() !== "" && (
+                      <a href={project.liveUrl} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label={`View live demo of ${project.title}`}>
                         <ExternalLink className="w-5 h-5" />
                       </a>
                     )}
